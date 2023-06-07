@@ -5,9 +5,10 @@ const Navbar = () => {
 
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/menu">Our Menu</Link></li>
-        <li><Link to="/order/salad">Order Food</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/instructors">Instructors</Link></li>
+        <li><Link to="/classes">Classes</Link></li>
+        <li><Link to="/deshboard">Dashboard</Link></li>
+
     </>
 
 
@@ -25,7 +26,7 @@ const Navbar = () => {
                     </div>
                     <div className='flex'>
                         <img className='w-14' src={logo} alt="" />
-                    <a className="btn btn-ghost normal-case text-xl">Martial Arts</a>
+                        <a className="btn btn-ghost normal-case text-xl">Martial Arts</a>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -34,15 +35,19 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    
-                     
-                        <div className="avatar">
-                            <div className="w-10 mr-3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img className="tooltip tooltip-bottom" data-tip="" src="" />
-                            </div>
+
+
+                    <div className="avatar">
+                        <div className="w-10 mr-3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                            <img className="tooltip tooltip-bottom" data-tip="" src="" />
                         </div>
-                   
-                    <a className="btn">Get started</a>
+                    </div>
+
+
+                    <li className='btn'>
+                        <Link to="/login">Login</Link>
+                    </li>
+
                 </div>
             </div>
         </>
