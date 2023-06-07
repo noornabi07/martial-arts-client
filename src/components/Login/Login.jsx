@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/martial-login-register-img.png'
 import eye from '../../assets/eye logo.png'
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 
 
 const Login = () => {
  const [type, setType] = useState('password');
  const [icon, setIcon] = useState(eye)
+ const {signIn} = useContext(AuthContext);
 
  const handleToggle = () =>{
     if(type === 'password'){
@@ -27,23 +30,23 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password)
 
-        // signIn(email, password)
-        //     .then(result => {
-        //         const loggedUser = result.user;
-        //         console.log(loggedUser)
-        //         Swal.fire({
-        //             position: 'top-center',
-        //             icon: 'success',
-        //             title: 'Your login has success',
-        //             showConfirmButton: false,
-        //             timer: 1500
-        //         })
-        //         setError('')
-        //         navigate(from, {replace: true})
-        //     })
-        //     .catch(error => {
-        //         setError(error.message);
-        //     })
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Your login has success',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setError('')
+                navigate(from, {replace: true})
+            })
+            .catch(error => {
+                setError(error.message);
+            })
     }
 
 
@@ -83,6 +86,10 @@ const Login = () => {
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover font-bold text-red-600">Forgot password?</a>
                                     </label>
+                                </div>
+
+                                <div className="form-control mt-6">
+                                    <input className="btn btn-primary" type="submit" value="Login" />
                                 </div>
 
                             </form>

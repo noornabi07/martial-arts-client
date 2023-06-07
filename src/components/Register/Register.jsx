@@ -1,52 +1,38 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/martial-login-register-img.png'
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
         
     
         const onSubmit = data => {
-            // createUser(data.email, data.password)
-            //     .then(result => {
-            //         const newUser = result.user;
-            //         console.log(newUser)
+            createUser(data.email, data.password)
+                .then(result => {
+                    const newUser = result.user;
+                    console.log("current user", newUser)
+                    updateUserProfile(data.name, data.photoURL)
+                    .then(() =>{
+
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+
+
+                    navigate('/')
     
-            //         updateUserProfile(data.name, data.photoURL)
-    
-            //             .then(() => {
-            //                 const saveUser = { name: data.name, email: data.email }
-            //                 fetch('http://localhost:5000/users', {
-            //                     method: 'POST',
-            //                     headers: {
-            //                         'content-type': 'application/json'
-            //                     },
-            //                     body: JSON.stringify(saveUser)
-            //                 })
-            //                     .then(res => res.json())
-            //                     .then(data => {
-            //                         if (data.insertedId) {
-            //                             reset();
-            //                             Swal.fire({
-            //                                 position: 'top-center',
-            //                                 icon: 'success',
-            //                                 title: 'Your account create succuss',
-            //                                 showConfirmButton: false,
-            //                                 timer: 1500
-            //                             })
-            //                             navigate('/')
-            //                         }
-            //                     })
-            //             })
-            //             .catch(error => console.log(error))
-            //     })
-            //     .catch(error => {
-            //         console.log(error)
-            //     })
-        }
+                })
+                .catch(error => {
+                    console.log(error.message);
+                })
+            }
+
 
     return (
         <div>
@@ -102,21 +88,34 @@ const Register = () => {
                                             required: true,
                                             minLength: 6,
                                             maxLength: 12,
-                                            pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
                                         })} name='password' placeholder="password" className="input input-bordered" />
 
                                     {errors.password?.type === 'required' && <p className='text-red-500'>Password is required</p>}
 
                                     {errors.password?.type === 'minLength' && <p className='text-red-500'>Password add at least 6 character</p>}
 
-                                    {errors.password?.type === 'pattern' && <p className='text-red-500'>Password add must be lowercase, uppercase, special character</p>}
+                                </div>
 
-                                    {errors.password?.type === 'maxLength' && <p className='text-red-500'>Password must be less then 12 character</p>}
+                                {/* confirm password */}
+
+                                {/* <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Confirm Password</span>
+                                    </label>
+                                    <input type="password" {...register("passwordConfirm",
+                                        {
+                                            required: true,
+                                            minLength: 6,
+                                        })} name='passwordConfirm' placeholder="confirm password" className="input input-bordered" />
+
+                                    {errors.password?.type === 'required' && <p className='text-red-500'>Password is required</p>}
+
+                                    {errors.password?.type === 'minLength' && <p className='text-red-500'>Password add at least 6 character</p>}
 
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover font-bold text-red-600">Forgot password?</a>
                                     </label>
-                                </div>
+                                </div> */}
 
                                 {/* submit button */}
                                 <div className="form-control mt-6">
