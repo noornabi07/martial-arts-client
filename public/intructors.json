@@ -1,0 +1,38 @@
+[
+    {
+      
+      "image": "https://i.ibb.co/vVBDW12/instructor-1.jpg",
+      "name": "John Smith",
+      "email": "john.smith@example.com"
+    },
+    {
+     
+      "image": "https://i.ibb.co/tqpjjXF/instructor-2.jpg",
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com"
+    },
+    {
+     
+      "image": "https://i.ibb.co/t21JM6x/instructor-3.jpg",
+      "name": "Alex Johnson",
+      "email": "alex.johnson@example.com"
+    },
+    {
+      
+      "image": "https://i.ibb.co/JRn0ZSq/instructor-4.jpg",
+      "name": "Emily Brown",
+      "email": "emily.brown@example.com"
+    },
+    {
+      
+      "image": "https://i.ibb.co/rMMwdBk/instructor-11.jpg",
+      "name": "Michael Wilson",
+      "email": "michael.wilson@example.com"
+    },
+    {
+    
+      "image": "https://i.ibb.co/gy6rZZY/instructor-8.webp",
+      "name": "Sophia Lee",
+      "email": "sophia.lee@example.com"
+    }
+  ]

@@ -1,0 +1,42 @@
+[
+    {
+     
+      "Name": "Introduction to Photography",
+      "Image": "https://i.ibb.co/c15Qjmw/istockphoto-481776724-640x640.jpg",
+      "Instructor": "John Smith",
+      "Seats": 15,
+      "Price": "$200"
+    },
+    {
+      
+      "Name": "Advanced Photo Editing",
+      "Image": "https://i.ibb.co/Qf9TPnK/istockphoto-533932920-640x640.jpg",
+      "Instructor": "Emily Johnson",
+      "Seats": 10,
+      "Price": "$250"
+    },
+    {
+     
+      "Name": "Portrait Photography",
+      "Image": "https://i.ibb.co/wW50y2p/istockphoto-644928968-640x640.jpg",
+      "Instructor": "Michael Davis",
+      "Seats": 12,
+      "Price": "$180"
+    },
+    {
+     
+      "Name": "Oil Painting Basics",
+      "Image": "https://i.ibb.co/fXw3054/istockphoto-680336482-640x640.jpg",
+      "Instructor": "Sarah Thompson",
+      "Seats": 8,
+      "Price": "$150"
+    },
+    {
+     
+      "Name": "Sculpture Workshop",
+      "Image": "https://i.ibb.co/pWM1QGL/istockphoto-680336488-640x640.jpg",
+      "Instructor": "David Wilson",
+      "Seats": 10,
+      "Price": "$220"
+    }
+]
