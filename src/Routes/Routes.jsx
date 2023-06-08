@@ -9,6 +9,8 @@ import Classes from "../components/Classes/Classes";
 import Dashboard from "../components/MainLayout/Dashboard";
 import MyClass from "../components/Dashboard/MyClass/MyClass";
 import Allusers from "../components/Dashboard/Allusers/Allusers";
+import PrivetRoutes from "./PrivetRoutes";
+
 
 const router = createBrowserRouter([
     {
@@ -43,7 +45,7 @@ const router = createBrowserRouter([
     // Dashboard
     {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivetRoutes><Dashboard></Dashboard></PrivetRoutes>,
         children: [
             {
                 path: 'myclass',

@@ -1,24 +1,32 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ClassesCard = ({Singleclass}) => {
     const {user} = useContext(AuthContext);
-    const {name, image, instructor, seats, price} = Singleclass;
+    const {name, image, instructor, seats, price, _id} = Singleclass;
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleAddClass = clas =>{
         console.log(clas)
-        if(user){
-            fetch('http://localhost:5000/selecClasses')
+        if(user && user.email){
+            const selecClasses = {selecClassId: _id, name, image, instructor, seats, price, email: user.email}
+            fetch('http://localhost:5000/selecClasses', {
+                method: 'POST',
+               headers: {
+                'content-type' : 'application/json'
+               },
+               body: JSON.stringify(selecClasses)
+            })
             .then(res => res.json())
             .then(data => {
                 if(data.insertedId){
                     Swal.fire({
                         position: 'top-center',
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Your class selected',
                         showConfirmButton: false,
                         timer: 1500
                       })
@@ -35,7 +43,7 @@ const ClassesCard = ({Singleclass}) => {
                 confirmButtonText: 'Login Now'
               }).then((result) => {
                 if (result.isConfirmed) {
-                  navigate('/login')
+                  navigate('/login', {state: {from: location}})
                 }
               })
         }

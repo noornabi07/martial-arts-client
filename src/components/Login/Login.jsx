@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,  useLocation,  useNavigate } from 'react-router-dom';
 import img from '../../assets/martial-login-register-img.png'
 import eye from '../../assets/eye logo.png'
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
@@ -13,6 +13,9 @@ const Login = () => {
     const [icon, setIcon] = useState(eye)
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const handleToggle = () => {
         if (type === 'password') {
@@ -44,7 +47,7 @@ const Login = () => {
                     timer: 1500
                 })
                 setError('')
-                navigate('/')
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 setError(error.message);
