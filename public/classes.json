@@ -1,42 +1,50 @@
 [
     {
      
-      "Name": "Introduction to Photography",
-      "Image": "https://i.ibb.co/c15Qjmw/istockphoto-481776724-640x640.jpg",
-      "Instructor": "John Smith",
-      "Seats": 15,
-      "Price": "$200"
+      "name": "Chinese martial arts",
+      "image": "https://i.ibb.co/wwsnD8Q/training-1.jpg",
+      "instructor": "John Smith",
+      "seats": 15,
+      "price": "$200"
     },
     {
       
-      "Name": "Advanced Photo Editing",
-      "Image": "https://i.ibb.co/Qf9TPnK/istockphoto-533932920-640x640.jpg",
-      "Instructor": "Emily Johnson",
-      "Seats": 10,
-      "Price": "$250"
+      "name": "Shaolin Kung Fu",
+      "image": "https://i.ibb.co/ZhQzpnh/training-2.jpg",
+      "instructor": "Emily Johnson",
+      "seats": 10,
+      "price": "$250"
     },
     {
      
-      "Name": "Portrait Photography",
-      "Image": "https://i.ibb.co/wW50y2p/istockphoto-644928968-640x640.jpg",
-      "Instructor": "Michael Davis",
-      "Seats": 12,
-      "Price": "$180"
+      "name": "Emerson Combat Systems",
+      "image": "https://i.ibb.co/sF8Vd2z/training-3.jpg",
+      "instructor": "Michael Davis",
+      "seats": 12,
+      "price": "$180"
     },
     {
      
-      "Name": "Oil Painting Basics",
-      "Image": "https://i.ibb.co/fXw3054/istockphoto-680336482-640x640.jpg",
-      "Instructor": "Sarah Thompson",
-      "Seats": 8,
-      "Price": "$150"
+      "name": "Jailhouse rock (fighting style)",
+      "image": "https://i.ibb.co/x7M0KtB/training-4.jpg",
+      "instructor": "Sarah Thompson",
+      "seats": 8,
+      "price": "$150"
     },
     {
      
-      "Name": "Sculpture Workshop",
-      "Image": "https://i.ibb.co/pWM1QGL/istockphoto-680336488-640x640.jpg",
-      "Instructor": "David Wilson",
-      "Seats": 10,
-      "Price": "$220"
+      "name": "Collegiate wrestling",
+      "image": "https://i.ibb.co/7VdqX7h/training-5.jpg",
+      "instructor": "David Wilson",
+      "seats": 10,
+      "price": "$220"
+    },
+    {
+     
+      "name": "Combat pistol shooting",
+      "image": "https://i.ibb.co/m0mZDSg/training-6.jpg",
+      "instructor": "David Wilson",
+      "seats": 10,
+      "price": "$220"
     }
 ]

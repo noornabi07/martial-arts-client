@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import ClassesCard from './ClassesCard';
+import SectionTitle from '../SectionTitle/SectionTitle';
 
 const Classes = () => {
     const [classes, setClasses] = useState([]);
 
-    useEffect( () =>{
+    useEffect(() => {
         fetch('classes.json')
-        .then(res => res.json())
-        .then(data => setClasses(data))
+            .then(res => res.json())
+            .then(data => setClasses(data))
     }, [])
 
     return (
         <div>
-            <h2>Classes: {classes.length}</h2>
+            <SectionTitle subheading="our classes" heading="All Student Learning"></SectionTitle>
+            <div className='grid grid-cols-3 gap-5 mt-10 mx-auto'>
+                {
+                    classes.map(Singleclass => <ClassesCard
+                        key={Singleclass.id}
+                        Singleclass={Singleclass}
+                    ></ClassesCard>)
+                }
+            </div>
         </div>
     );
 };
