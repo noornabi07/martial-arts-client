@@ -18,7 +18,7 @@ const Navbar = () => {
 
         {user &&
             <>
-                <li><Link to="/deshboard">Dashboard</Link></li>
+                <li><Link to="/dashboard/myclass">Dashboard</Link></li>
                 <p className='text-red-500'></p>
             </>
 

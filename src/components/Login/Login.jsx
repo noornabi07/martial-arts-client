@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/martial-login-register-img.png'
 import eye from '../../assets/eye logo.png'
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
@@ -8,19 +8,21 @@ import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 
 
 const Login = () => {
- const [type, setType] = useState('password');
- const [icon, setIcon] = useState(eye)
- const {signIn} = useContext(AuthContext);
+    const [error, setError] = useState('')
+    const [type, setType] = useState('password');
+    const [icon, setIcon] = useState(eye)
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
 
- const handleToggle = () =>{
-    if(type === 'password'){
-        setType('text')
-        setIcon(eye)
-    }else{
-        setType('password')
-        setIcon(eye)
+    const handleToggle = () => {
+        if (type === 'password') {
+            setType('text')
+            setIcon(eye)
+        } else {
+            setType('password')
+            setIcon(eye)
+        }
     }
- }
 
 
     const handleLogin = event => {
@@ -42,7 +44,7 @@ const Login = () => {
                     timer: 1500
                 })
                 setError('')
-                navigate(from, {replace: true})
+                navigate('/')
             })
             .catch(error => {
                 setError(error.message);
@@ -63,7 +65,7 @@ const Login = () => {
                         <div className="card-body">
                             <h1 className="text-3xl font-bold text-center text-red-600">Login now!</h1>
 
-                            <p className='text-2xl text-center font-semibold text-orange-400'></p>
+                            <p className='text-2xl text-center font-semibold text-orange-400'>{error}</p>
 
                             <form onSubmit={handleLogin}>
                                 <div className="form-control">
