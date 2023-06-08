@@ -13,7 +13,7 @@ const ClassesCard = ({Singleclass}) => {
         console.log(clas)
         if(user && user.email){
             const selecClasses = {selecClassId: _id, name, image, instructor, seats, price, email: user.email}
-            fetch('http://localhost:5000/selecClasses', {
+            fetch('http://localhost:5000/selectClass', {
                 method: 'POST',
                headers: {
                 'content-type' : 'application/json'
@@ -61,8 +61,8 @@ const ClassesCard = ({Singleclass}) => {
                     <p>Instructor: {instructor}</p>
                     <div className="card-actions justify-center mt-4 items-center">
                         <div className="badge badge-outline">Seats: {seats}</div>
-                        <div className="badge badge-outline">Price: {price}</div>
-                        <button onClick={handleAddClass} className="btn btn-sm bg-gray-500 text-white">Select</button>
+                        <div className="badge badge-outline">Price: ${price}</div>
+                        <button onClick={handleAddClass} className="btn btn-sm bg-gray-600 text-white">Select</button>
                     </div>
                 </div>
             </div>

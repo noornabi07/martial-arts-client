@@ -5,7 +5,7 @@
       "image": "https://i.ibb.co/wwsnD8Q/training-1.jpg",
       "instructor": "John Smith",
       "seats": 15,
-      "price": "$200"
+      "price": 200
     },
     {
       
@@ -13,7 +13,7 @@
       "image": "https://i.ibb.co/ZhQzpnh/training-2.jpg",
       "instructor": "Emily Johnson",
       "seats": 10,
-      "price": "$250"
+      "price": 250
     },
     {
      
@@ -21,7 +21,7 @@
       "image": "https://i.ibb.co/sF8Vd2z/training-3.jpg",
       "instructor": "Michael Davis",
       "seats": 12,
-      "price": "$180"
+      "price": 180
     },
     {
      
@@ -29,7 +29,7 @@
       "image": "https://i.ibb.co/x7M0KtB/training-4.jpg",
       "instructor": "Sarah Thompson",
       "seats": 8,
-      "price": "$150"
+      "price": 150
     },
     {
      
@@ -37,7 +37,7 @@
       "image": "https://i.ibb.co/7VdqX7h/training-5.jpg",
       "instructor": "David Wilson",
       "seats": 10,
-      "price": "$220"
+      "price": 220
     },
     {
      
@@ -45,6 +45,6 @@
       "image": "https://i.ibb.co/m0mZDSg/training-6.jpg",
       "instructor": "David Wilson",
       "seats": 10,
-      "price": "$220"
+      "price": 220
     }
 ]
