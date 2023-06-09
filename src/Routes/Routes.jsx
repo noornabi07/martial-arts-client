@@ -11,6 +11,14 @@ import MyClass from "../components/Dashboard/MyClass/MyClass";
 import Allusers from "../components/Dashboard/Allusers/Allusers";
 import PrivetRoutes from "./PrivetRoutes";
 import AllClasses from "../components/Dashboard/AllClasses/AllClasses";
+import AdminRoutes from "./AdminRoutes";
+import AddClass from "../components/Dashboard/Instructor/AddClass/AddClass";
+import InstructorRoutes from "./InstructorRoutes";
+import Myclasses from "../components/Dashboard/Instructor/Myclasses/Myclasses";
+import EnrolledStudents from "../components/Dashboard/Instructor/EnrolledStudents/EnrolledStudents";
+import Feedback from "../components/Dashboard/Instructor/Feedback/Feedback";
+import EnrolledClass from "../components/Dashboard/Users/EnrolledClass/EnrolledClass";
+import PaymentHistory from "../components/Dashboard/Users/PaymentHistory/PaymentHistory";
 
 
 const router = createBrowserRouter([
@@ -53,12 +61,36 @@ const router = createBrowserRouter([
                 element: <MyClass></MyClass>
             },
             {
+                path: 'enrolledClass',
+                element: <EnrolledClass></EnrolledClass>
+            },
+            {
+                path: 'paymentHistory',
+                element: <PaymentHistory></PaymentHistory>
+            },
+            {
                 path: 'allusers',
-                element: <Allusers></Allusers>
+                element: <AdminRoutes><Allusers></Allusers></AdminRoutes>
             },
             {
                 path: 'classHistory',
-                element: <AllClasses></AllClasses>
+                element: <AdminRoutes><AllClasses></AllClasses></AdminRoutes>
+            },
+            {
+                path: 'addclass',
+                element: <InstructorRoutes><AddClass></AddClass></InstructorRoutes>
+            },
+            {
+                path: 'myclasses',
+                element: <InstructorRoutes><Myclasses></Myclasses></InstructorRoutes>
+            },
+            {
+                path: 'enrolledStudents',
+                element: <InstructorRoutes><EnrolledStudents></EnrolledStudents></InstructorRoutes>
+            },
+            {
+                path: 'feedback',
+                element: <InstructorRoutes><Feedback></Feedback></InstructorRoutes>
             }
         ]
     }
