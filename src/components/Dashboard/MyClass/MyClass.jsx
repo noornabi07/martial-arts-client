@@ -1,22 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
 import SectionTitle from '../../SectionTitle/SectionTitle';
-import { AuthContext } from '../../../Provider/AuthProvider/AuthProvider';
 import MyClassRow from './MyClassRow';
 import Swal from 'sweetalert2';
+import useClasses from '../../hooks/useClasses';
 
 
 
 const MyClass = () => {
-    const { user } = useContext(AuthContext);
-    const [classes, setClasses] = useState([]);
+    const [selectClasses] = useClasses();
 
-    const total = classes.reduce((sum, clases) => clases.price + sum, 0);
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/selectClass?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => setClasses(data))
-    }, [])
+    const total = selectClasses.reduce((sum, clases) => clases.price + sum, 0);
 
     const handleDelete = id => {
         Swal.fire({
@@ -54,7 +46,7 @@ const MyClass = () => {
             <SectionTitle subheading="Class Show Now" heading="All Select Class"></SectionTitle>
 
             <div className='flex uppercase gap-10 justify-between items-center'>
-                <h2 className='font-semibold  text-xl'>Total Selected Class: {classes.length}</h2>
+                <h2 className='font-semibold  text-xl'>Total Selected Class: {selectClasses.length}</h2>
                 <h2 className='font-semibold text-xl'>Total Price: ${total}</h2>
                 <button className="btn btn-sm bg-pink-500 text-white font-semibold">Payment</button>
             </div>
@@ -77,13 +69,14 @@ const MyClass = () => {
                     <tbody>
 
                         {
-                            classes.map((singleClass, index) => <MyClassRow
+                            selectClasses.map((singleClass, index) => <MyClassRow
                                 key={singleClass._id}
                                 singleClass={singleClass}
                                 handleDelete={handleDelete}
                                 index={index}
                             ></MyClassRow>)
                         }
+                       
 
                     </tbody>
                 </table>

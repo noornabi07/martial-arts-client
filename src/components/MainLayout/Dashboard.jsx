@@ -3,12 +3,14 @@ import { Link, Outlet } from 'react-router-dom';
 import { FaHome, FaUsers } from 'react-icons/fa';
 import { MdClass, MdWorkHistory } from 'react-icons/Md';
 import { BsBookmarkFill } from 'react-icons/Bs';
+import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
 
     // TODO: 
-    const isAdmin = true;
+    // const isAdmin = true;
     const isInstructor = true;
+    const [isAdmin] = useAdmin();
 
     return (
         <div>
@@ -22,7 +24,7 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-80 h-full bg-orange-500 text-white">
                         {
                             isAdmin ? <>
                                 {/* admin all path */}
