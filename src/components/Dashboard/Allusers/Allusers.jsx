@@ -3,13 +3,16 @@ import React from 'react';
 import SectionTitle from '../../SectionTitle/SectionTitle';
 import { FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const Allusers = () => {
-
+    const [axiosSecure] = useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['allusers'], async () => {
-        const res = await fetch('http://localhost:5000/allusers')
-        return res.json();
+        const res = await axiosSecure.get('/allusers')
+        return res.data;
     });
+
+    console.log(users)
 
     const handleMakeAdmin = user =>{
         fetch(`http://localhost:5000/allusers/admin/${user._id}`, {

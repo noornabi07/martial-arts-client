@@ -4,13 +4,15 @@ import { FaHome, FaUsers } from 'react-icons/fa';
 import { MdClass, MdWorkHistory } from 'react-icons/Md';
 import { BsBookmarkFill } from 'react-icons/Bs';
 import useAdmin from '../hooks/useAdmin';
+import useInstructor from '../hooks/useInstructor';
 
 const Dashboard = () => {
 
     // TODO: 
     // const isAdmin = true;
-    const isInstructor = true;
+    // const isInstructor = true;
     const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     return (
         <div>
@@ -26,18 +28,17 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full bg-orange-500 text-white">
                         {
-                            isAdmin ? <>
+                            isAdmin && ( <>
                                 {/* admin all path */}
                                 <li><Link><FaHome></FaHome> Admin Home</Link></li>
                                 <li><Link to="/dashboard/classHistory"><MdClass></MdClass>Manage All Classes</Link></li>
                                  <li><Link to="/dashboard/allusers"><FaUsers></FaUsers> Manage All Users</Link></li>
-                             </>
-                                : isInstructor ? <>
+                             </> ) ||  isInstructor && <>
                                     <li><Link><FaHome></FaHome> Instructor Home</Link></li>
                                     <li><Link to="/dashboard/myclass"><MdClass></MdClass>My Classes</Link></li>
                                     <li><Link><BsBookmarkFill></BsBookmarkFill> Enrolled Students</Link></li>
                                     <li><Link><MdWorkHistory></MdWorkHistory> Payment History</Link></li>
-                                    </> : <>
+                                    </> || <>
                                     <li><Link><FaHome></FaHome> User Home</Link></li>
                                     <li><Link to="/dashboard/myclass"><MdClass></MdClass>My select Class</Link></li>
                                     <li><Link><BsBookmarkFill></BsBookmarkFill> Enrolled Class</Link></li>

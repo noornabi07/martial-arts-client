@@ -31,7 +31,7 @@ const useClasses = () =>{
 
     const {refetch, data: selectClasses = [] } = useQuery({
         queryKey: ['selectClass', user?.email],
-        // enabled: !loading,
+        enabled: !loading,
 
         queryFn: async () =>{
             const res = await axiosSecure(`/selectClass?email=${user.email}`);
