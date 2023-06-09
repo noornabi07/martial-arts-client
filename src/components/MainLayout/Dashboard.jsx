@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { FaHome } from 'react-icons/fa';
+import { FaHome, FaUsers } from 'react-icons/fa';
 import { MdClass, MdWorkHistory } from 'react-icons/Md';
 import { BsBookmarkFill } from 'react-icons/Bs';
 
@@ -23,33 +23,34 @@ const Dashboard = () => {
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
-                        {/* { */}
-                            {/* // isAdmin ? <> */}
-                                 {/* admin all path */}
-                            {/* //     <li><Link><FaHome></FaHome> Admin Home</Link></li> */}
-                            {/* //     <li><Link to="/dashboard/history"><MdClass></MdClass>Manage Classes</Link></li> */}
-                            {/* //     <li><Link to="/dashboard/allusers"><BsBookmarkFill></BsBookmarkFill> Manage Users</Link></li> */}
-                            {/* </>
+                        {
+                            isAdmin ? <>
+                                {/* admin all path */}
+                                <li><Link><FaHome></FaHome> Admin Home</Link></li>
+                                <li><Link to="/dashboard/classHistory"><MdClass></MdClass>Manage All Classes</Link></li>
+                                 <li><Link to="/dashboard/allusers"><FaUsers></FaUsers> Manage All Users</Link></li>
+                             </>
                                 : isInstructor ? <>
                                     <li><Link><FaHome></FaHome> Instructor Home</Link></li>
                                     <li><Link to="/dashboard/myclass"><MdClass></MdClass>My Classes</Link></li>
                                     <li><Link><BsBookmarkFill></BsBookmarkFill> Enrolled Students</Link></li>
-                                    <li><Link><MdWorkHistory></MdWorkHistory> Payment History</Link></li> */}
-                                {/* </> : <> */}
+                                    <li><Link><MdWorkHistory></MdWorkHistory> Payment History</Link></li>
+                                    </> : <>
                                     <li><Link><FaHome></FaHome> User Home</Link></li>
-                                    <li><Link to="/dashboard/myclass"><MdClass></MdClass>My Class</Link></li>
+                                    <li><Link to="/dashboard/myclass"><MdClass></MdClass>My select Class</Link></li>
                                     <li><Link><BsBookmarkFill></BsBookmarkFill> Enrolled Class</Link></li>
                                     <li><Link><MdWorkHistory></MdWorkHistory> Payment History</Link></li>
-                                {/* </> */}
-                        {/* } */}
-                        {/* Sidebar content here */}
+                                    </>
+                        }
 
-                        <div className="divider"></div>
-                        <li><Link to="/"><FaHome></FaHome>Home</Link></li>
-                        <li><Link>All Instructors</Link></li>
-                        <li><Link>All Classes</Link></li>
+                                    {/* Sidebar content here */}
 
-                    </ul>
+                                    <div className="divider"></div>
+                                    <li><Link to="/"><FaHome></FaHome>Home</Link></li>
+                                    <li><Link>All Instructors</Link></li>
+                                    <li><Link>All Classes</Link></li>
+
+                                </ul>
 
                 </div>
             </div>

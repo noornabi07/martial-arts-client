@@ -10,6 +10,7 @@ import Dashboard from "../components/MainLayout/Dashboard";
 import MyClass from "../components/Dashboard/MyClass/MyClass";
 import Allusers from "../components/Dashboard/Allusers/Allusers";
 import PrivetRoutes from "./PrivetRoutes";
+import AllClasses from "../components/Dashboard/AllClasses/AllClasses";
 
 
 const router = createBrowserRouter([
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path: 'allusers',
                 element: <Allusers></Allusers>
+            },
+            {
+                path: 'classHistory',
+                element: <AllClasses></AllClasses>
             }
         ]
     }
