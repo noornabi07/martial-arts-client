@@ -4,34 +4,55 @@ import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/martial-login-register-img.png'
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
+    const [error, setError] = useState('')
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
-        
-    
-        const onSubmit = data => {
-            createUser(data.email, data.password)
-                .then(result => {
-                    const newUser = result.user;
-                    console.log("current user", newUser)
-                    updateUserProfile(data.name, data.photoURL)
-                    .then(() =>{
 
+
+    const onSubmit = data => {
+        createUser(data.email, data.password)
+            .then(result => {
+                const newUser = result.user;
+                console.log("current user", newUser)
+
+                updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        const saveUser = {name: data.name, email: data.email}
+                        fetch('http://localhost:5000/allusers', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-center',
+                                        icon: 'success',
+                                        title: 'Create Your Account Success',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    navigate('/')
+                                }
+                            })
                     })
                     .catch(error => {
-                        console.log(error)
+                        setError(error.message)
                     })
 
-
-                    navigate('/')
-    
-                })
-                .catch(error => {
-                    console.log(error.message);
-                })
-            }
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    }
 
 
     return (
@@ -46,8 +67,7 @@ const Register = () => {
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
                             <h1 className="text-3xl font-bold text-center text-lime-600">Please Registration</h1>
-                            <p className='text-2xl text-center font-semibold text-green-600'></p>
-                            <p className='text-2xl text-center font-semibold text-orange-400'></p>
+                            <p className='text-2xl text-center font-semibold text-orange-400'>{error}</p>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 {/* name field */}
                                 <div className="form-control">
@@ -64,8 +84,8 @@ const Register = () => {
                                         <span className="label-text font-bold">Photo URL</span>
                                     </label>
                                     <input type="text" {...register("photoURL", { required: true })} placeholder="Photo URL" className="input input-bordered" />
-                                    {errors.photoURL && 
-                                    <span className='text-red-500'>Photo is required</span>
+                                    {errors.photoURL &&
+                                        <span className='text-red-500'>Photo is required</span>
                                     }
                                 </div>
 

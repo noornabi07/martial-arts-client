@@ -50,7 +50,7 @@ const MyClass = () => {
     }
 
     return (
-        <div className='w-full bg-gray-500 px-4 py-3 text-white mt-5'>
+        <div className='w-full bg-gray-500 px-4 pt-4 pb-20 text-white mt-5'>
             <SectionTitle subheading="Class Show Now" heading="All Select Class"></SectionTitle>
 
             <div className='flex uppercase gap-10 justify-between items-center'>
