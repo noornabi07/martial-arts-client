@@ -12,8 +12,6 @@ const Allusers = () => {
         return res.data;
     });
 
-    console.log(users)
-
     const handleMakeAdmin = user =>{
         fetch(`http://localhost:5000/allusers/admin/${user._id}`, {
             method: 'PATCH'
@@ -34,6 +32,7 @@ const Allusers = () => {
     }
 
     const handleMakeInstructor = user =>{
+        // const newInstructor = {name: user.name, email: user.email}
         fetch(`http://localhost:5000/allusers/instructor/${user._id}`, {
             method: 'PATCH'
         })
@@ -44,13 +43,14 @@ const Allusers = () => {
                 Swal.fire({
                     position: 'top-center',
                     icon: 'success',
-                    title: `${user.name} is now Instructor`,
+                    title: 'Your Class Added Successfull',
                     showConfirmButton: false,
                     timer: 1500
                   })
             }
         })
     }
+
 
     return (
         <div className='bg-gray-500 px-4 pt-4 pb-20 text-white mt-5'>

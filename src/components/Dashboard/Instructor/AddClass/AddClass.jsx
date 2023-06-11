@@ -32,10 +32,11 @@ const AddClass = () => {
                     const newClass = { name, instructor, email, price: parseFloat(price), seats: parseFloat(seats), image: imgURL, status: 'pending' }
                    
 
-                    axiosSecure.post('/instructors', newClass)
+                    axiosSecure.post('/classes', newClass)
                     .then(data => {
                         console.log('after add class', data.data);
                         if(data.data.insertedId){
+                            reset();
                             Swal.fire({
                                 position: 'top-center',
                                 icon: 'success',

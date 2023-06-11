@@ -34,7 +34,7 @@ const Dashboard = () => {
                                 <li><Link to="/dashboard/classHistory"><MdClass></MdClass>Manage All Classes</Link></li>
                                  <li><Link to="/dashboard/allusers"><FaUsers></FaUsers> Manage All Users</Link></li>
                              </> ) ||  isInstructor && <>
-                                    <li><Link><FaHome></FaHome> Instructor Home</Link></li>
+                                    <li><Link to="/"><FaHome></FaHome> Instructor Home</Link></li>
                                     <li><Link to="/dashboard/addclass"><MdClass></MdClass>Add Class</Link></li>
                                     <li><Link to="/dashboard/myclasses"><BsBookmarkFill></BsBookmarkFill> My Classes</Link></li>
                                     <li><Link to="/dashboard/enrolledStudents"><MdWorkHistory></MdWorkHistory> Total Enrolled Students</Link></li>
