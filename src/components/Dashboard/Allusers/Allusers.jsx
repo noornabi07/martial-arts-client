@@ -32,7 +32,6 @@ const Allusers = () => {
     }
 
     const handleMakeInstructor = user =>{
-        // const newInstructor = {name: user.name, email: user.email}
         fetch(`http://localhost:5000/allusers/instructor/${user._id}`, {
             method: 'PATCH'
         })

@@ -6,7 +6,7 @@ import useClasses from '../../hooks/useClasses';
 
 
 const MyClass = () => {
-    const [selectClasses] = useClasses();
+    const [selectClasses, refetch] = useClasses();
 
     const total = selectClasses.reduce((sum, clases) => clases.price + sum, 0);
 
@@ -27,13 +27,12 @@ const MyClass = () => {
                     .then(res => res.json())
                     .then(data => {
                         if (data.deletedCount > 0) {
+                            refetch();
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',
                                 'success'
                             )
-                            const remaining = classes.filter(item => item._id !== id);
-                            setClasses(remaining)
                         }
                     })
 

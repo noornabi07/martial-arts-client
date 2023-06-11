@@ -83,15 +83,7 @@ const router = createBrowserRouter([
             {
                 path: 'myclasses',
                 element: <InstructorRoutes><Myclasses></Myclasses></InstructorRoutes>
-            },
-            {
-                path: 'enrolledStudents',
-                element: <InstructorRoutes><EnrolledStudents></EnrolledStudents></InstructorRoutes>
-            },
-            {
-                path: 'feedback',
-                element: <InstructorRoutes><Feedback></Feedback></InstructorRoutes>
-            }
+            }, 
         ]
     }
 ])

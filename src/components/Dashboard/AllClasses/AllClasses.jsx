@@ -11,23 +11,42 @@ const AllClasses = () => {
         return res.data;
     });
 
-    const handleMakeApproved = id =>{
+    const handleMakeApproved = id => {
         fetch(`http://localhost:5000/classes/${id}`, {
             method: 'PATCH'
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.modifiedCount){
-                refetch();
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'success',
-                    title: 'Your Class Approved now',
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-            }
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Your Class Approved now',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
+    const handleMakeDeny = id => {
+        fetch(`http://localhost:5000/classes/deny/${id}`, {
+            method: 'PATCH'
         })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Your Class Deny Now',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
     }
 
     return (
@@ -40,7 +59,7 @@ const AllClasses = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                           
+
                             <th>Class Image</th>
                             <th>Class Name</th>
                             <th>Instructor</th>
@@ -56,7 +75,7 @@ const AllClasses = () => {
                     <tbody>
                         {
                             allclasses.map((singleClass, index) => <tr key={singleClass._id}>
-                                 
+
                                 <td>
                                     <div className="flex items-center space-x-3">
                                         <div className="avatar">
@@ -72,14 +91,26 @@ const AllClasses = () => {
                                 <td>{singleClass.seats}</td>
                                 <td>{singleClass.price}</td>
                                 <td>{singleClass.status}</td>
-                                <td>
-                                    <button onClick={() => handleMakeApproved(singleClass._id)} className="btn btn-sm bg-green-600 text-white
-                                    ">Approved</button>
+                              
+
+                                {<> <td>
+                                    <button
+                                        disabled={
+                                            singleClass.status === "deny" || singleClass.status === "approved"
+                                        }
+                                        onClick={() => handleMakeApproved(singleClass._id)}
+                                        className='btn btn-sm bg-green-500 text-white'>Approve</button>
                                 </td>
-                                <td>
-                                    <button className="btn btn-sm bg-red-600 text-white
-                                    ">Deny</button>
-                                </td>
+                                    <td>
+                                        <button
+                                            disabled={
+                                                singleClass.status === "deny" || singleClass.status === "approved" 
+                                            }
+                                            onClick={() => handleMakeDeny(singleClass._id)}
+                                            className='btn btn-sm bg-red-500 text-white'>Deny</button>
+                                    </td> </>}
+
+
                                 <td>
                                     <button className="btn btn-sm bg-orange-600 text-white
                                     ">Feedback</button>

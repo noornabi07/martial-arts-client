@@ -2,7 +2,7 @@ import React from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
 
 const MyClassRow = ({singleClass, index, handleDelete}) => {
-    console.log(singleClass)
+
     const {name, instructor, image, price, seats, email, _id} = singleClass;
 
     return (
