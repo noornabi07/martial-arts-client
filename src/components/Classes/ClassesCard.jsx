@@ -9,16 +9,15 @@ const ClassesCard = ({Singleclass}) => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const handleAddClass = clas =>{
-        console.log(clas)
+    const handleAddClass = () =>{
         if(user && user.email){
-            const selecClasses = {selecClassId: _id, name, image, instructor, seats, price, email: user.email}
+            const selectClasses = {selectClassId: _id, name, image, instructor, seats, price, email: user.email}
             fetch('http://localhost:5000/selectClass', {
                 method: 'POST',
                headers: {
                 'content-type' : 'application/json'
                },
-               body: JSON.stringify(selecClasses)
+               body: JSON.stringify(selectClasses)
             })
             .then(res => res.json())
             .then(data => {

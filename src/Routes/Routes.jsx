@@ -15,10 +15,10 @@ import AdminRoutes from "./AdminRoutes";
 import AddClass from "../components/Dashboard/Instructor/AddClass/AddClass";
 import InstructorRoutes from "./InstructorRoutes";
 import Myclasses from "../components/Dashboard/Instructor/Myclasses/Myclasses";
-import EnrolledStudents from "../components/Dashboard/Instructor/EnrolledStudents/EnrolledStudents";
-import Feedback from "../components/Dashboard/Instructor/Feedback/Feedback";
 import EnrolledClass from "../components/Dashboard/Users/EnrolledClass/EnrolledClass";
-import PaymentHistory from "../components/Dashboard/Users/PaymentHistory/PaymentHistory";
+import Payment from "../components/Dashboard/MyClass/Payment/Payment";
+import PaymentHistory from "../components/Dashboard/MyClass/Payment/PaymentHistory";
+import Welcome from "../components/Dashboard/Welcome/Welcome";
 
 
 const router = createBrowserRouter([
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             }
         ]
-        
+
     },
 
     // Dashboard
@@ -56,6 +56,10 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <PrivetRoutes><Dashboard></Dashboard></PrivetRoutes>,
         children: [
+            {
+                path: 'welcome',
+                element: <Welcome></Welcome>
+            },
             {
                 path: 'myclass',
                 element: <MyClass></MyClass>
@@ -83,7 +87,13 @@ const router = createBrowserRouter([
             {
                 path: 'myclasses',
                 element: <InstructorRoutes><Myclasses></Myclasses></InstructorRoutes>
-            }, 
+            },
+            {
+                path: 'payment/:id',
+                element: <Payment></Payment>,
+                loader: ({ params }) =>
+                    fetch(`http://localhost:5000/selectClass/${params.id}`),
+            }
         ]
     }
 ])

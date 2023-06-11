@@ -4,9 +4,10 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 
 const Classes = () => {
     const [classes, setClasses] = useState([]);
+    console.log(classes)
 
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('http://localhost:5000/allClasses')
             .then(res => res.json())
             .then(data => setClasses(data))
     }, [])
