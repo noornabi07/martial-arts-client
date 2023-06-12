@@ -1,0 +1,42 @@
+[
+    {
+      "id": "64875896f8ba482b146a2e8e",
+      "img": "https://i.ibb.co/Brcs3jZ/T1.jpg",
+      "name": "Sensei Yamamoto",
+      "title": "Accounting",
+      "details": "Philosophy and Discipline: Explore the philosophical aspects of the martial art style. Some martial arts emphasize spiritual growth, mental discipline, and character development. Evaluate how the training promotes values such as respect, self-control, humility, and perseverance"
+
+    },
+    {
+        "id": "64875896e565609e9cca8355",
+        "img": "https://i.ibb.co/9m0K1qC/T3.jpg",
+        "name": "Guru Singh",
+        "title": "Manager",
+        "details": " Evaluate the training methods employed in the martial art style. Consider the balance between physical conditioning, flexibility, sparring, and drills. Look for structured progression and the inclusion of realistic scenarios to enhance practical application."
+  
+      },
+      {
+        "id": "648758965e16347a33ec03a1",
+        "img": "https://i.ibb.co/p2X9gLK/T6.jpg",
+        "name": "Professor Johnson",
+        "title": "Instructors",
+        "details": "Philosophy and Discipline: Explore the philosophical aspects of the martial art style. Some martial arts emphasize spiritual growth, mental discipline, and character development. Evaluate how the training promotes values such as respect, self-control, humility, and perseverance"
+  
+      },
+      {
+        "id": "6487589607810f3ab1fb325e",
+        "img": "https://i.ibb.co/hV4M0pH/author-3.png ",
+        "name": "Grandmaster Lee",
+        "title": "Accounting",
+        "details": " Evaluate the training methods employed in the martial art style. Consider the balance between physical conditioning, flexibility, sparring, and drills. Look for structured progression and the inclusion of realistic scenarios to enhance practical application."
+  
+      },
+      {
+        "id": "64875896c503455815f69ae2",
+        "img": "https://i.ibb.co/qr4fQkC/author-2.png",
+        "name": "Coach Hernandez",
+        "title": "Athelete",
+        "details": "Philosophy and Discipline: Explore the philosophical aspects of the martial art style. Some martial arts emphasize spiritual growth, mental discipline, and character development. Evaluate how the training promotes values such as respect, self-control, humility, and perseverance"
+  
+      }
+  ]

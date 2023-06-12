@@ -7,20 +7,20 @@ const Footer = () => {
     return (
         <div>
              <div>
-            <footer className="footer p-10 mt-10 bg-teal-600 text-white">
+            <footer className="footer p-10 mt-10 bg-slate-700 text-white">
                 <div>
                     <img className='w-40 rounded-full' src={logo} alt="" />
-                    <p className='font-semibold'>Animal Toys Shop.<br />Providing reliable tech since 2023</p>
+                    <p className='font-semibold'>Martial Arts<br />Providing reliable tech since 2023</p>
                 </div>
                 <div className='text-lg'>
-                    <span className="footer-title text-2xl">Services</span>
-                    <a className="link link-hover hover:ml-2 hover:duration-200 hover:text-red-600">Animal Toys</a>
-                    <a className="link link-hover hover:ml-2 hover:duration-200 hover:text-red-600">Kids Toys</a>
-                    <a className="link link-hover hover:ml-2 hover:duration-200 hover:text-red-600">Learning Toys</a>
-                    <a className="link link-hover hover:ml-2 hover:duration-200 hover:text-red-600">Musical Toys</a>
+                    <span className="footer-title">Services</span>
+                    <a className="link link-hover hover:ml-2 hover:duration-200 hover:text-red-600">Beginner's Martial Arts </a>
+                    <a className="link link-hover hover:ml-2 hover:duration-200 hover:text-red-600">Advanced Martial Arts</a>
+                    <a className="link link-hover hover:ml-2 hover:duration-200 hover:text-red-600">Women's Self-Defense</a>
+                    <a className="link link-hover hover:ml-2 hover:duration-200 hover:text-red-600">Children's Martial Arts</a>
                 </div>
                 <div className='text-lg'>
-                    <span className="footer-title text-2xl"> Contact</span>
+                    <span className="footer-title"> Contact</span>
                     <a className="link link-hover flex items-center">
                         <FaPhoneSquare className='text-xl text-white font-bold mr-3'></FaPhoneSquare>
                         <span> 01826147180</span>
@@ -43,7 +43,7 @@ const Footer = () => {
 
                 </div>
                 <div>
-                    <span className="footer-title text-2xl">Legal</span>
+                    <span className="footer-title">Legal</span>
                     <a className="link link-hover" href='https://www.facebook.com/mdnoornabiislamNK' target='_blank'>
                         <FaFacebook className='text-3xl hover:rotate-45 hover:duration-500'></FaFacebook>
                     </a>

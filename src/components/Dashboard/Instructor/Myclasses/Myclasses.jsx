@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import useAddClasses from '../../../hooks/useAddClasses';
 import SectionTitle from '../../../SectionTitle/SectionTitle';
+import { AuthContext } from '../../../../Provider/AuthProvider/AuthProvider';
 
 const Myclasses = () => {
-    const [addClasses] = useAddClasses();
+   const [myAddClasses, setAddClasses] = useState([])
+
+    const {user} = useContext(AuthContext)
+    useEffect( () =>{
+        fetch(`http://localhost:5000/myClasses/${user.email}`)
+        .then(res => res.json())
+        .then(data => setAddClasses(data))
+    }, [])
+
     return (
         <div>
             <SectionTitle subheading="Your Added All Class" heading="Your Class Info"></SectionTitle>
@@ -24,7 +33,7 @@ const Myclasses = () => {
                     </thead>
                     <tbody>
                         {
-                            addClasses.map((singleClass, index) =>  <tr key={singleClass._id}>
+                            myAddClasses.map((singleClass, index) =>  <tr key={singleClass._id}>
                                 <th>{index + 1}</th>
                                 <td>{singleClass.name}</td>
                                 <td>{singleClass.status}</td>

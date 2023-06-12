@@ -20,10 +20,10 @@ const EnrolledClass = () => {
 
             <SectionTitle subheading="Your Enrolled History" heading="Enrolled Class"></SectionTitle>
 
-            <div className="overflow-x-auto">
+            <div className='w-full bg-gray-500 px-4 pt-4 pb-20 text-white mt-5'>
                 <table className="table border">
                     {/* head */}
-                    <thead className='font-lg text-orange-400'>
+                    <thead className='text-lg text-lime-400'>
                         <tr>
                             <th>#</th>
                             <th>Class Name</th>

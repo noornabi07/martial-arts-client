@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../../../Provider/AuthProvider/AuthProvider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
-import PaymentHistoryCard from "./PaymentHistoryRow";
 import SectionTitle from "../../../SectionTitle/SectionTitle";
 import PaymentHistoryRow from "./PaymentHistoryRow";
 

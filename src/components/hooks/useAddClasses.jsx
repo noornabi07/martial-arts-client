@@ -9,19 +9,19 @@ const useAddClasses = () =>{
 
     const [axiosSecure] = useAxiosSecure()
 
-    const {refetch, data: addClasses = [] } = useQuery({
-        queryKey: ['classes', user?.email],
+    const {refetch, data: addMyClasses = [] } = useQuery({
+        queryKey: ['myClasses', user?.email],
         enabled: !loading,
 
         queryFn: async () =>{
-            const res = await axiosSecure(`/classes?email=${user.email}`);
+            const res = await axiosSecure(`/myClasses?email=${user.email}`);
             console.log('res from axios', res)
             return res.data;
         },
 
       })
 
-      return [addClasses, refetch]
+      return [addMyClasses, refetch]
 }
 
 export default useAddClasses;

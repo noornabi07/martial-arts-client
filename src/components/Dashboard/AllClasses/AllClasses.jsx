@@ -55,9 +55,9 @@ const AllClasses = () => {
 
             {/* table */}
             <div className="overflow-x-auto">
-                <table className="table">
+                <table className="table border">
                     {/* head */}
-                    <thead>
+                    <thead className='text-orange-300 text-sm'>
                         <tr>
 
                             <th>Class Image</th>
