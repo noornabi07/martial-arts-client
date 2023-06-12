@@ -17,10 +17,10 @@ const Trailer = () => {
                 <p className='text-gray-200 mt-4'>Porta augue amet ac metus hac senectus auctor lacus consequat pretium. Vivamus nisl cras neque etiam risus natoque malesuada. Curabitur curae at sed mattis praesent condimentum placerat massa ultrices tellus.</p>
             </div>
 
-            <div className='grid grid-cols-3 gap-8 mx-10'>
+            <div className='grid lg:grid-cols-3 lg:gap-8 lg:mx-10'>
                 {
                     trailers.map(trailer => <div key={trailer.id}>
-                        <div className="card card-compact w-96 bg-base-100 shadow-xl hover:scale-110 hover:duration-300">
+                        <div className="card px-3 card-compact lg:w-96 mt-5 md:mt-0 shadow-xl hover:scale-110 hover:duration-300">
                             <figure><img className='' src={trailer.img} alt="Shoes" /></figure>
                             <div className="card-body bg-slate-900 text-white">
                                 <div className='text-center'>

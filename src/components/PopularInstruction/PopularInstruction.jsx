@@ -13,13 +13,16 @@ const PopularInstruction = () => {
 
 
     return (
-        <div className='bg-gray-700 my-32 py-8 px-5 pb-10 rounded-lg'>
-            <SectionTitle heading="Best Instructors" subheading="Popular Instruction"></SectionTitle>
+        <div className='bg-gray-700 my-32 py-8 lg:px-5 pb-10 rounded-lg'>
+            <div>
+                <h2 className='font-bold text-2xl text-white text-center'>Popular Instructors</h2>
+                <p></p>
+            </div>
 
-            <div className='grid grid-cols-3 gap-8'>
+            <div className='grid lg:grid-cols-3 lg:gap-8'>
                 {
                     popularInstructors.map(instructor => <div key={instructor._id}>
-                        <div data-aos="zoom-in" data-aos-duration="1000" className="card card-compact w-96 bg-base-100 shadow-xl">
+                        <div data-aos="zoom-in" data-aos-duration="1000" className="card card-compact lg:w-96 px-3 mt-5 md:mt-0 shadow-xl">
                             <figure><img className='hover:scale-125 hover:duration-300' src={instructor.image} alt="Shoes" /></figure>
                             <div className="card-body bg-slate-800 text-white">
                                 <h2 className="card-title">{instructor.name}</h2>
