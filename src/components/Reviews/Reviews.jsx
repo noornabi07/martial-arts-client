@@ -34,7 +34,7 @@ const Reviews = () => {
                     {
                         reviews.map(review => <div key={review.id}>
                             <SwiperSlide>
-                                <div className="card w-96 mb-10 bg-base-100 border-4 border-gray-600">
+                                <div className="card w-96 mb-10 bg-slate-700 border-4 border-gray-600 text-white">
                                     <figure><div className="avatar">
                                         <div className="w-24 my-2 mt-3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                             <img src={review.img} />
@@ -42,7 +42,7 @@ const Reviews = () => {
                                     </div></figure>
                                     <div className="card-body text-center">
                                         <h2 className="text-xl font-bold -mt-6">{review.name}</h2>
-                                        <p className='text-red-400 font-bold'>{review.title}</p>
+                                        <p className='text-red-500 font-bold'>{review.title}</p>
                                         <div className="card-actions justify-center">
                                             <div className="rating">
                                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
@@ -52,7 +52,7 @@ const Reviews = () => {
                                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                                             </div>
 
-                                            <p className='text-gray-500'>{review.details}</p>
+                                            <p className=''>{review.details}</p>
                                         </div>
                                     </div>
                                 </div>

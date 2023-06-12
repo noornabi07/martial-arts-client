@@ -19,7 +19,7 @@ const PopularInstruction = () => {
             <div className='grid grid-cols-3 gap-8'>
                 {
                     popularInstructors.map(instructor => <div key={instructor._id}>
-                        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                        <div data-aos="zoom-in" data-aos-duration="1000" className="card card-compact w-96 bg-base-100 shadow-xl">
                             <figure><img className='hover:scale-125 hover:duration-300' src={instructor.image} alt="Shoes" /></figure>
                             <div className="card-body bg-slate-800 text-white">
                                 <h2 className="card-title">{instructor.name}</h2>

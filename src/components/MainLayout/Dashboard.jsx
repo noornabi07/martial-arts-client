@@ -26,7 +26,7 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-orange-500 text-white">
+                    <ul className="menu p-4 w-80 h-full bg-slate-800 text-white">
                         {
                             isAdmin && (<>
                                 {/* admin all path */}
