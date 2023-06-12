@@ -4,7 +4,7 @@ import { AuthContext } from "../../../../Provider/AuthProvider/AuthProvider";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
-const Checkout = ({ price, id, selectClassId }) => {
+const Checkout = ({ price, id, selectClassId, name }) => {
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -71,6 +71,7 @@ const Checkout = ({ price, id, selectClassId }) => {
             // save payment information to the server
             const payment = {
                 id,
+                name,
                 email: user?.email,
                 transactionId: paymentIntent.id,
                 price,
@@ -97,9 +98,9 @@ const Checkout = ({ price, id, selectClassId }) => {
     };
     return (
         <div className='mb-20'>
-            {cardError && <p className='text-red-600 ml-8'>{cardError}</p>}
+            {cardError && <p className='text-red-600 text-lg text-center'>{cardError}</p>}
             {transactionId && (
-                <p className='text-green-500'>
+                <p className='text-green-500 text-lg text-center'>
                     Transaction complete with transactionId: {transactionId}
                 </p>
             )}

@@ -9,7 +9,7 @@ const PaymentHistoryRow = ({ payment, index }) => {
       <td>{id}</td>
       <td>{transactionId}</td>
       <td>{date}</td>
-      <td className='text-green-500'>${price}</td>
+      <td className='text-green-500 text-sm font-bold'>${price}</td>
     </tr>
 
   );

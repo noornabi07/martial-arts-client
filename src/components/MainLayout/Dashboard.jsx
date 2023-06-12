@@ -41,7 +41,7 @@ const Dashboard = () => {
                             </> || <>
                                 <li><Link to="/"><FaHome></FaHome> User Home</Link></li>
                                 <li><Link to="/dashboard/myclass"><MdClass></MdClass>My select Class</Link></li>
-                                <li><Link to="/dashboard/enrolledClass"><BsBookmarkFill></BsBookmarkFill> Enrolled Class</Link></li>
+                                <li><Link to="/dashboard/enrolledClass"><BsBookmarkFill></BsBookmarkFill>  My Enrolled Class</Link></li>
                                 <li><Link to="/dashboard/paymentHistory"><MdWorkHistory></MdWorkHistory> Payment History</Link></li>
                             </>
                         }

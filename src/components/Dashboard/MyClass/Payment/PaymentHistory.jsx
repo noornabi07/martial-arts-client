@@ -9,7 +9,7 @@ import PaymentHistoryRow from "./PaymentHistoryRow";
 const PaymentHistory = () => {
     const { loading, user } = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure();
-    const { data: payments = [], error } = useQuery({
+    const { data: payments = [], } = useQuery({
         queryKey: ['payments'],
         enabled: !loading,
         queryFn: async () => {
@@ -21,15 +21,7 @@ const PaymentHistory = () => {
     return (
         <div>
             <SectionTitle heading="Pay History" subheading="Your All Payment Details"></SectionTitle>
-            {/* <div className=''>
-                {
-                    payments.map(payment => <PaymentHistoryCard
-                        key={payment._id}
-                        payment={payment}>
-                    </PaymentHistoryCard>)
-                }
-            </div> */}
-
+           
             <div className="overflow-x-auto bg-gray-500 px-4 pt-4 pb-20 text-white mt-5">
                 <table className="table border">
                     {/* head */}

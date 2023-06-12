@@ -66,7 +66,7 @@ const Login = () => {
 
                     <div className="card flex-shrink-0 mt-10 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
-                            <h1 className="text-3xl font-bold text-center text-red-600">Login now!</h1>
+                            <h1 className="text-3xl font-bold text-center text-green-500">Login now!</h1>
 
                             <p className='text-2xl text-center font-semibold text-orange-400'>{error}</p>
 

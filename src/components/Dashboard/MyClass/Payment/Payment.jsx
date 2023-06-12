@@ -7,7 +7,6 @@ import Checkout from './Checkout';
 
 const Payment = () => {
     const selectClass = useLoaderData();
-    console.log(selectClass);
     const stripePromise = loadStripe(import.meta.env.VITE_Payment_Getway_pk)
 
     return (
@@ -20,6 +19,7 @@ const Payment = () => {
                     price={selectClass.price}
                     id={selectClass._id}
                     selectClassId={selectClass.selectClassId}
+                    name={selectClass.name}
                 >
                 </Checkout>
             </Elements>

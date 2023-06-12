@@ -14,12 +14,12 @@ const Navbar = () => {
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
-        <li><Link to="/classes">Classes</Link></li>
+        <li><Link to="/allApprovedClasses">Classes</Link></li>
 
         {user &&
             <>
                 <li><Link to="/dashboard/welcome">Dashboard</Link></li>
-                <p className='text-red-500'></p>
+                
             </>
 
         }
