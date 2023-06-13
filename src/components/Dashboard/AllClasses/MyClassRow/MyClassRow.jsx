@@ -5,7 +5,7 @@ const MyClassRow = ({ singleClass, refetch}) => {
     const { name, instructor, image, email, seats, price, status, _id } = singleClass
 console.log(_id);
     const handleMakeApproved = id => {
-        fetch(`http://localhost:5000/classes/${id}`, {
+        fetch(`https://martial-arts-server-noornabi07.vercel.app/classes/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -24,7 +24,7 @@ console.log(_id);
     }
 
     const handleMakeDeny = id => {
-        fetch(`http://localhost:5000/classes/deny/${id}`, {
+        fetch(`https://martial-arts-server-noornabi07.vercel.app/classes/deny/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -63,7 +63,7 @@ console.log(_id);
         };
 
         console.log(feedback)
-        fetch(`http://localhost:5000/addClasses/${_id}`, {
+        fetch(`https://martial-arts-server-noornabi07.vercel.app/addClasses/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

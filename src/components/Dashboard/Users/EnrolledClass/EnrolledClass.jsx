@@ -8,7 +8,7 @@ const EnrolledClass = () => {
     const [enrolled, setEnrolled] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/enrolledClass/${user.email}`)
+        fetch(`https://martial-arts-server-noornabi07.vercel.app/enrolledClass/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setEnrolled(data);

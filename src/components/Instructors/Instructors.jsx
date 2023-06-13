@@ -7,7 +7,7 @@ const Instructors = () => {
     console.log(datas)
 
     useEffect(() => {
-        fetch('http://localhost:5000/allinstructors')
+        fetch('https://martial-arts-server-noornabi07.vercel.app/allinstructors')
             .then(res => res.json())
             .then(data => setDatas(data));
     }, [])

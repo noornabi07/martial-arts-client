@@ -18,7 +18,7 @@ const ClassesCard = ({ Singleclass }) => {
         if (user && user.email) {
             const selectClasses = { selectClassId: _id, name, image, instructor, seats, price, email: user.email }
 
-            fetch('http://localhost:5000/selectClass', {
+            fetch('https://martial-arts-server-noornabi07.vercel.app/selectClass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

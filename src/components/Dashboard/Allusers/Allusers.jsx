@@ -13,7 +13,7 @@ const Allusers = () => {
     });
 
     const handleMakeAdmin = user =>{
-        fetch(`http://localhost:5000/allusers/admin/${user._id}`, {
+        fetch(`https://martial-arts-server-noornabi07.vercel.app/allusers/admin/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -32,7 +32,7 @@ const Allusers = () => {
     }
 
     const handleMakeInstructor = user =>{
-        fetch(`http://localhost:5000/allusers/instructor/${user._id}`, {
+        fetch(`https://martial-arts-server-noornabi07.vercel.app/allusers/instructor/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())

@@ -81,7 +81,7 @@ const Checkout = ({ price, id, selectClassId, name }) => {
 
             axiosSecure.post("/payments", payment).then((res) => {
                 console.log(res.data);
-                fetch(`http://localhost:5000/all-classes/seats/${selectClassId}`, {
+                fetch(`https://martial-arts-server-noornabi07.vercel.app/all-classes/seats/${selectClassId}`, {
                     method: "PATCH",
                 })
                     .then((res) => res.json())

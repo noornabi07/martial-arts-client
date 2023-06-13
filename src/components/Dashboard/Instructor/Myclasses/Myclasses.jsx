@@ -8,7 +8,7 @@ const Myclasses = () => {
 
     const {user} = useContext(AuthContext)
     useEffect( () =>{
-        fetch(`http://localhost:5000/myClasses/${user.email}`)
+        fetch(`https://martial-arts-server-noornabi07.vercel.app/myClasses/${user.email}`)
         .then(res => res.json())
         .then(data => setAddClasses(data))
     }, [])
