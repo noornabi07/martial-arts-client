@@ -8,10 +8,10 @@ import Swal from 'sweetalert2';
 
 const Register = () => {
     const [error, setError] = useState('')
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset,watch, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
-
+    const password = watch("password")
 
     const onSubmit = data => {
         createUser(data.email, data.password)
@@ -21,7 +21,7 @@ const Register = () => {
 
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = {name: data.name, email: data.email, image: data.photoURL}
+                        const saveUser = { name: data.name, email: data.email, image: data.photoURL }
                         fetch('http://localhost:5000/allusers', {
                             method: 'POST',
                             headers: {
@@ -117,6 +117,26 @@ const Register = () => {
                                 </div>
 
                                 {/* confirm password */}
+
+                                <div className="mb-4">
+                                    <label className="font-semibold" htmlFor="confirm">
+                                        Confirm Password
+                                    </label>
+                                    <input
+                                        className="border-2 border-[#C5C5C5] py-2 px-3 w-full rounded-lg mt-2"
+                                        type="password"
+                                        {...register("confirm", {
+                                            required: "Confirm Password is required",
+                                            validate: (value) =>
+                                                value === password || "Passwords do not match",
+                                        })}
+                                        id=""
+                                        placeholder="Confirm Password"
+                                    />
+                                    {errors.confirm && (
+                                        <p className="text-sm text-red-500">{errors.confirm.message}</p>
+                                    )}
+                                </div>
 
                                 {/* <div className="form-control">
                                     <label className="label">

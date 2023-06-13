@@ -37,8 +37,8 @@ const Myclasses = () => {
                                 <th>{index + 1}</th>
                                 <td>{singleClass.name}</td>
                                 <td>{singleClass.status}</td>
-                                <td>0</td>
-                                <td>Coming</td>
+                                <td>{singleClass.student}</td>
+                                <td>{singleClass.feedback}</td>
                                 <td>
                                 <button className="btn btn-sm bg-gray-600 text-white">Update</button>
                                 </td>

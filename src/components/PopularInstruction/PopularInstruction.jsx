@@ -15,7 +15,7 @@ const PopularInstruction = () => {
     return (
         <div className='bg-gray-700 my-32 py-8 lg:px-5 pb-10 rounded-lg'>
             <div>
-                <h2 className='font-bold text-2xl text-white text-center'>Popular Instructors</h2>
+                <h2 className='font-bold text-2xl text-white text-center mb-7'>Popular Instructors</h2>
                 <p></p>
             </div>
 
@@ -29,7 +29,7 @@ const PopularInstruction = () => {
                                 <p>{instructor.email}</p>
                                 <div className="card-actions justify-end">
                                     <Link to="/login">
-                                        <button className="btn btn-sm text-slate-900 hover:bg-red-600 hover:text-white">Booking Now</button>
+                                        <button className="btn btn-sm text-slate-900 hover:bg-red-600 hover:text-white bg-white">Booking Now</button>
                                     </Link>
                                 </div>
                             </div>

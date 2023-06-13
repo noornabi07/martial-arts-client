@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useAdmin from '../hooks/useAdmin';
+import useInstructor from '../hooks/useInstructor';
 
 
 const ClassesCard = ({ Singleclass }) => {
@@ -9,11 +11,13 @@ const ClassesCard = ({ Singleclass }) => {
     const { name, image, instructor, seats, price, _id } = Singleclass;
     const navigate = useNavigate();
     const location = useLocation();
-
+    const isAdmin = useAdmin();
+    const isInstructor = useInstructor();
 
     const handleAddClass = () => {
         if (user && user.email) {
             const selectClasses = { selectClassId: _id, name, image, instructor, seats, price, email: user.email }
+
             fetch('http://localhost:5000/selectClass', {
                 method: 'POST',
                 headers: {
@@ -53,7 +57,7 @@ const ClassesCard = ({ Singleclass }) => {
     return (
         <div>
 
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className={`card w-96 shadow-xl ${seats === 0 ? "bg-red-500" : "bg-base-100"}`}>
                 <figure><img className='hover:scale-125 hover:duration-300' src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
@@ -64,7 +68,7 @@ const ClassesCard = ({ Singleclass }) => {
                         <div className="badge badge-outline">Seats: {seats}</div>
                         <div className="badge badge-outline">Price: ${price}</div>
 
-                         <button onClick={handleAddClass} className="btn btn-sm bg-gray-600 text-white">Select</button>
+                        {isAdmin && isInstructor && seats == 0 ? <button disabled onClick={handleAddClass} className="btn btn-sm bg-gray-600 text-white">Select</button> : <button onClick={handleAddClass} className="btn btn-sm bg-gray-600 text-white">Select</button>}
 
                     </div>
                 </div>
